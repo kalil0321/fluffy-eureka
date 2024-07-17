@@ -1,0 +1,15 @@
+{
+  "CustomDrawerContent.tsx": {
+    "string_1": {
+      "value": "{{name}}",
+      "dynamic": true
+    },
+    "string_2": {
+      "value": "{{email}}",
+      "dynamic": true
+    },
+    "string_3": {
+      "value": "Operator"
+    }
+  }
+}
