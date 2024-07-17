@@ -1,0 +1,82 @@
+{
+  "react-native-test-file.ts": {
+    "string_1": {
+      "value": "Welcome"
+    },
+    "string_10": {
+      "value": "Part 1."
+    },
+    "string_11": {
+      "value": "Nested part 2."
+    },
+    "string_12": {
+      "value": "Part 3."
+    },
+    "string_13": {
+      "value": "Template literal with {{name}}",
+      "dynamic": true
+    },
+    "string_14": {
+      "value": "Text wrapped in curly braces"
+    },
+    "string_15": {
+      "value": "Click me!"
+    },
+    "string_16": {
+      "value": "Enter your name"
+    },
+    "string_17": {
+      "value": "Show Alert"
+    },
+    "string_18": {
+      "value": "Simple Alert"
+    },
+    "string_19": {
+      "value": "You entered: {{inputText}}",
+      "dynamic": true
+    },
+    "string_2": {
+      "value": "Hello, welcome to our app!"
+    },
+    "string_20": {
+      "value": "Translated: {{var0}} {{name}}",
+      "dynamic": true
+    },
+    "string_21": {
+      "value": "{{t('common.hello') + ' ' + t('common.world')}}",
+      "dynamic": true
+    },
+    "string_22": {
+      "value": "{{var0}} {{var1}} {{var2}}",
+      "dynamic": true
+    },
+    "string_23": {
+      "value": "Item {{var0}}: {{item}}",
+      "dynamic": true
+    },
+    "string_24": {
+      "value": "© {{currentYear}} My Amazing App",
+      "dynamic": true
+    },
+    "string_3": {
+      "value": "This is a simple alert"
+    },
+    "string_4": {
+      "value": "Welcome to our React Native App!"
+    },
+    "string_5": {
+      "value": "Hello, {{name}}! You have {{items.length}} items.",
+      "dynamic": true
+    },
+    "string_6": {
+      "value": "This is a multi-line text.\n        It spans multiple lines."
+    },
+    "string_7": {
+      "value": "You have many items!"
+    },
+    "string_9": {
+      "value": "The current year is {{currentYear}}.",
+      "dynamic": true
+    }
+  }
+}
