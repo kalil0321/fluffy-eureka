@@ -1,174 +1,137 @@
+import { useTranslation } from "react-i18next";
 import React from 'react';
 import { View, Text, StyleSheet, Button, TouchableOpacity, TextInput, Alert } from 'react-native';
-
 interface Props {
   name: string;
   items: string[];
 }
-
-const EdgeCasesComponent: React.FC<Props> = ({ name, items }) => {
-
+const EdgeCasesComponent: React.FC<Props> = ({
+  name,
+  items
+}) => {
+  const {
+    t
+  } = useTranslation();
   const showAlert = () => {
-    Alert.alert(
-      'Alert Title',
-      'Alert Message',
-      [
-        {
-          text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
-          style: 'cancel'
-        },
-        { text: 'OK', onPress: () => console.log('OK Pressed') }
-      ]
-    );
+    Alert.alert(t("edge-cases-2-2-2-2.string_1.value"), t("edge-cases-2-2-2-2.string_2.value"), [{
+      text: t("edge-cases-2-2-2-2.string_3.value"),
+      onPress: () => console.log('Cancel Pressed'),
+      style: 'cancel'
+    }, {
+      text: t("edge-cases-2-2-2-2.string_4.value"),
+      onPress: () => console.log('OK Pressed')
+    }]);
   };
+  return <View style={styles.container}>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_5.value")}</Text>
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        {"Text wrapped in curly braces"}
-      </Text>
+      <Text>{t("edge-cases-2-2-2-2.string_6.value", {
+        "name": name
+      })}</Text>
 
-      <Text>
-      {name}
-      </Text>
-
-      <Button title="Hi!" onPress={() => {}} />
+      <Button title={t("edge-cases-2-2-2-2.string_7.value")} onPress={() => {}} />
 
       <TouchableOpacity onPress={() => {}}>
-        <Text style={styles.text}>
-          Touch me
-        </Text>
+        <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_8.value")}</Text>
       </TouchableOpacity>
 
-      <TextInput placeholder="Enter your name" />
+      <TextInput placeholder={t("edge-cases-2-2-2-2.string_9.value")} />
 
-      <Text style={styles.text}>
-        Translated: Hello {name}
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_10.value", {
+        "name": name
+      })}</Text>
 
-      {items.map((item, index) => (
-        <Text
-          style={styles.text}
-          key={index}
-        >{`Item ${index + 1}: ${item}`}</Text>
-      ))}
+      {items.map((item, index) => <Text style={styles.text} key={index}>{t("edge-cases-2-2-2-2.string_11.value", {
+        ["var0"]: index + 1,
+        ["item"]: item
+      })}</Text>)}
 
-      <Text style={styles.blueText}>
-        This is a multi-line text. It spans multiple lines.
-        {items.length > 5 && "You have many items!"}
-      </Text>
+      <Text style={styles.blueText}>{t("edge-cases-2-2-2-2.string_12.value")}{items.length > 5 && t("edge-cases-2-2-2-2.string_13.value")}</Text>
 
-      <Text style={styles.text}>
-        Hello, {name}! You have {items.length} items.
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_15.value", {
+        "name": name,
+        "items.length": items.length
+      })}</Text>
 
-      <Text
-        style={styles.text}
-      >{`Template literal with ${name}`}</Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_16.value", {
+        ["name"]: name
+      })}</Text>
 
-      <Text style={styles.text}>
-        Part 1. 
-        <Text style={styles.nestedText}>Nested part 2.</Text>
-        Part 3.
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_17.value")}<Text style={styles.nestedText}>{t("edge-cases-2-2-2-2.string_18.value")}</Text>{t("edge-cases-2-2-2-2.string_19.value")}</Text>
 
-      <Text style={styles.text}>
-        Key1 Key2
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_20.value")}</Text>
 
-      <Text style={styles.text}>
-        Key3 with variables
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_21.value")}</Text>
 
-      <Text style={styles.text}>
-        {items.length === 1 ? 'Singular' : `Plural: ${items.length}`}
-      </Text>
+      <Text style={styles.text}>{items.length === 1 ? 'Singular' : `Plural: ${items.length}`}</Text>
 
-      <Text style={styles.text}>
-        Start middle end
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_25.value")}</Text>
 
-      <Button title="Show Alert" onPress={showAlert} />
+      <Button title={t("edge-cases-2-2-2-2.string_26.value")} onPress={showAlert} />
 
-      <Text style={styles.text}>
-        Miscellaneous text 1
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_27.value")}</Text>
 
-      <Text style={styles.text}>
-        Miscellaneous text 2 with dynamic value: {name}
-      </Text>
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_28.value", {
+        "name": name
+      })}</Text>
 
-      <Button title="Submit" onPress={() => {}} />
+      <Button title={t("edge-cases-2-2-2-2.string_29.value")} onPress={() => {}} />
 
       <TouchableOpacity onPress={() => {}}>
-        <Text style={styles.text}>
-          Click me
-        </Text>
+        <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_30.value")}</Text>
       </TouchableOpacity>
 
-      <TextInput placeholder="Type something" />
+      <TextInput placeholder={t("edge-cases-2-2-2-2.string_31.value")} />
+
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_32.value")}</Text>
+
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_33.value")}</Text>
+
+      <Text style={styles.text}>{items.length > 0 ? 'Non-empty list' : 'Empty list'}</Text>
+
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_37.value", {
+        "name": name
+      })}</Text>
+
+      <Button title={t("edge-cases-2-2-2-2.string_38.value")} onPress={() => Alert.alert(t("edge-cases-2-2-2-2.string_39.value"), t("edge-cases-2-2-2-2.string_40.value"))} />
+
+      <Text style={styles.text}>{t("edge-cases-2-2-2-2.string_41.value", {
+        "name": name
+      })}</Text>
 
       <Text style={styles.text}>
-        Footer note
-      </Text>
-
-      <Text style={styles.text}>
-        Thank you
-      </Text>
-
-      <Text style={styles.text}>
-        {items.length > 0 ? 'Non-empty list' : 'Empty list'}
-      </Text>
-
-      <Text style={styles.text}>
-        With variable: {name}
-      </Text>
-
-      <Button title="Press Me" onPress={() => Alert.alert('Press Title', 'Press Message')} />
-
-      <Text style={styles.text}>
-        Long text with variable {name}
-      </Text>
-
-      <Text style={styles.text}>
-        Text with dynamic value: {`Value: ${items.length}`}
-      </Text>
-    </View>
-  );
+        Text with dynamic value: Value: </Text>
+    </View>;
 };
-
-
 const Component2 = () => {
-  return <Text>Component2 Text Element (Testing)</Text>
-}
-
+  return <Text>{t("edge-cases-2-2-2-2.string_43.value")}</Text>;
+};
 const Component3 = () => {
-  return <Text>Component3 Text Element (Testing)</Text>
+  return <Text>{t("edge-cases-2-2-2-2.string_44.value")}</Text>;
+};
+function Component4() {
+  const {
+    t
+  } = useTranslation();
+  return <Text>{t("edge-cases-2-2-2-2.string_45.value")}</Text>;
 }
-
-function Component4(){
-  return <Text>This component (Component4) is a function</Text>
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 20
   },
   text: {
     fontSize: 15,
     color: 'white',
-    marginBottom: 10,
+    marginBottom: 10
   },
   blueText: {
     fontSize: 15,
     color: 'blue',
-    marginBottom: 10,
+    marginBottom: 10
   },
   nestedText: {
-    fontWeight: 'bold',
-  },
+    fontWeight: 'bold'
+  }
 });
-
 export default EdgeCasesComponent;
